@@ -146,9 +146,6 @@ footer { text-align: center; padding: 40px 20px; background-color: #0d1117; marg
   .project-card { padding: 20px; }
 }
 
-
-
-
 /* Container */
 .contact-footer-container {
   display: flex;
@@ -291,8 +288,19 @@ footer { text-align: center; padding: 40px 20px; background-color: #0d1117; marg
 
 /* Responsive */
 @media(max-width:768px) {
-  .about-container { flex-direction: column; align-items: center; }
-  .about-summary, .about-skills { max-width: 100%; }
+  .about-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin: 0 auto;
+}
+
+.about-summary, .about-skills {
+  flex: 1 1 100%;      /* full width on mobile */
+  max-width: 100%;
+  text-align: center;   /* Optional: center text for mobile */
+}
+
   .skills-grid { grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); }
   .skills-grid span { text-align: center; }
 }
@@ -337,40 +345,6 @@ footer { text-align: center; padding: 40px 20px; background-color: #0d1117; marg
 
 /* Responsive */
 @media(max-width:768px) {
-  nav ul {
-    flex-direction: column;
-    gap: 15px;
-    position: absolute;
-    top: 70px;
-    right: 0;
-    background: #0d1117;
-    width: 220px;
-    padding: 20px;
-    display: none;
-    border-radius: 0 0 0 10px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.5);
-  }
-
-  nav ul.active {
-    display: flex;
-  }
-
-  .hamburger {
-    display: flex;
-  }
-
-  .resume-btn {
-    display: block;   /* Show resume button in menu */
-    text-align: center;
-    background: #0d1117;
-    border: 2px solid #58a6ff;
-    margin-top: 10px;
-  }
-
-  .resume-btn:hover {
-    background-color: #0366d6;
-    color: #fff;
-  }
+  .skills-track { gap: 15px; }
+  .skills-track span { padding: 8px 15px; font-size: 10pt; }
 }
-
-
